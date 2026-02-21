@@ -1,0 +1,890 @@
+/* =====================================================
+   Amazon Clone Project
+   Author: Akash Gill
+   Description:
+   This project is a responsive Amazon homepage clone
+   created using HTML5 and CSS3.
+
+   Features:
+   - Responsive Navbar
+   - Sidebar Navigation
+   - Mobile-first Media Queries
+   - Product Card Layout
+   - Fully Responsive Footer
+
+   Note:
+   This project is built only for educational and
+   portfolio purposes. Amazon branding and assets
+   belong to Amazon Inc.
+
+   ===================================================== */
+
+
+/* -----------------------------------------------------
+   Basic Reset
+   Removing default browser spacing & fixing box model
+----------------------------------------------------- */
+
+* {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+
+/* =====================================================
+   HEADER NAVIGATION AREA
+   Contains logo, delivery location, search bar,
+   account section and cart icon
+===================================================== */
+
+.navbar {
+    height: 40px;
+    background-color: #0f1111;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+/* Logo container */
+.nav-logo {
+    height: 50px;
+    width: 100px;
+}
+
+.logo {
+    background-image: url("amazon_logo.png");
+    background-size: cover;
+    height: 50px;
+    width: 100%;
+}
+
+.border {
+    border: 1.5px solid transparent;
+}
+
+/* Hover border effect used across navbar items */
+.border:hover {
+    border: 1.5px solid white;
+}
+
+/** box2 **/
+/* Delivery address block */
+.add-first {
+    color: #cccccc;
+    font-size: 0.85rem;
+    margin-left: 15px;
+}
+
+.add-second {
+    font-size: 1rem;
+    margin-left: 2px;
+}
+
+/* Location icon alignment fix */
+.add-icon {
+    display: flex;
+    align-items: center;
+}
+
+/** box3 **/
+/* -----------------------------------------------------
+   Search Bar Styling
+   Main search input with category selector
+----------------------------------------------------- */
+
+.nav-search {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: pink;
+    width: 620px;
+    height: 40px;
+    border-radius: 15px;
+}
+
+/* Category dropdown (All departments) */
+.search-select {
+    background-color: #f3f3f3;
+    width: 50px;
+    text-align: center;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border: none;
+}
+
+/* Search input field */
+.search-input {
+    width: 100%;
+    font-size: 1rem;
+    border: none;
+}
+
+/* Search icon button */
+.search-icon {
+    width: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    background-color: #febd68;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    color: #0f1111;
+}
+
+/* Highlight search bar on hover */
+.nav-search:hover {
+    border: 2px solid #febd68;
+}
+
+/** box4 **/
+/* =====================================================
+   Language Selection Dropdown
+   Appears on hover
+===================================================== */
+/* Country flag sizing */
+.flag {
+    width: 18px;
+    height: 12px;
+    object-fit: cover;
+    margin-right: 4px;
+}
+
+.lang-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    padding: 8px 9px;
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    border: 1.5px solid transparent;
+    background: transparent;
+}
+
+.lang-box:hover {
+    border: 1.5px solid white;
+}
+
+/* Dropdown popup container */
+.lang-dropdown {
+    display: none;
+    position: absolute;
+    top: 110%;
+    right: 0;
+    width: 200px;
+    background: white;
+    color: black;
+    padding: 10px;
+    border-radius: 3px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    z-index: 1000;
+}
+
+.lang-box:hover .lang-dropdown {
+    display: block;
+}
+
+/** box5 **/
+/* User account & sign-in section */
+.nav-first {
+    font-size: 0.7rem;
+}
+
+.signin {
+    display: none;
+}
+
+.nav-second {
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+/**box6**/
+/* Cart icon styling */
+.nav-cart {
+    font-size: 0.85rem;
+    font-weight: 700;
+    display: flex;
+}
+
+.nav-cart i {
+    font-size: 30px;
+}
+
+/** panel **/
+/* =====================================================
+   Secondary Navigation Panel
+   Quick access links like Deals, Help, etc.
+===================================================== */
+
+.panel {
+    height: 40px;
+    background-color: #222f3d;
+    display: flex;
+    color: white;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+/* Hamburger menu trigger */
+.panel-all {
+    display: flex;
+}
+.panel-ops p {
+    display: inline;
+    margin-left: 15px;
+}
+/* Panel navigation links alignment */
+.panel-ops {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    font-size: 0.85rem;
+}
+
+.panel-deals {
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+/* =====================================================
+   Hero Banner Section
+   Main promotional background image
+===================================================== */
+.hero-section {
+    background-image: url(hero_image.jpg);
+    background-size: cover;
+    height: 380px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+/* Message overlay displayed over banner */
+.hero-msg {
+    background-color: white;
+    color: #0f1111;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    width: 80%;
+    margin-bottom: 25px;
+}
+
+.hero-msg a {
+    color: #007185;
+}
+
+.org {
+    color: white;
+    text-decoration: none;
+}
+
+/** shop-section **/
+/* =====================================================
+   Product Showcase Section
+   Grid layout for shopping categories
+===================================================== */
+
+.shop-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    text-decoration: none;
+    background-color: #e2e7e6;
+}
+
+.card-row {
+    display: contents;
+}
+
+/* Individual product card */
+.box {
+    height: 400px;
+    width: 23%;
+    background-color: white;
+    padding: 15px 0px 15px 0px;
+    margin-top: 15px;
+    text-decoration: none;
+}
+
+/* Product image container */
+.box-img {
+    height: 300px;
+    background-size: cover;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Card inner content spacing */
+.box-content {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+/* Product link styling */
+.box-content p {
+    color: #007185;
+}
+
+.org2 {
+    text-decoration: none;
+    color: black;
+}
+
+/* SIDEBAR CHECKBOX */
+/* =====================================================
+   Sidebar Navigation Drawer
+   Opens using checkbox toggle (No JS used)
+===================================================== */
+/* Sidebar hidden state */
+
+#sidebar-toggle {
+    display: none;
+}
+
+/* SIDEBAR */
+/* Sidebar active/open state */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 280px;
+    height: 100%;
+    background: #fff;
+    overflow-y: auto;
+    transition: 0.3s ease;
+    z-index: 1001;
+    padding-bottom: 20px;
+}
+
+/* OPEN SIDEBAR */
+#sidebar-toggle:checked ~ .sidebar {
+    left: 0;
+}
+
+/* Background overlay when sidebar opens */
+.sidebar-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 1000;
+}
+
+#sidebar-toggle:checked ~ .sidebar-overlay {
+    display: block;
+}
+
+/* Sidebar header area */
+.sidebar-header {
+    background: #232f3e;
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sidebar-header p a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 700;
+}
+/* CLOSE BUTTON */
+.close-btn {
+    cursor: pointer;
+    font-size: 20px;
+}
+
+/* TITLES */
+.sidebar h4 {
+    padding: 12px;
+    font-size: 14px;
+    color: #555;
+    border-top: 1px solid #eee;
+}
+
+/* LINKS */
+.sidebar a {
+    display: block;
+    padding: 12px;
+    color: #111;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.sidebar a:hover {
+    background: #f3f3f3;
+}
+
+/** footer **/
+/* =====================================================
+   FOOTER AREA
+   Multi-column informational links
+===================================================== */
+
+footer {
+    margin-top: 15px;
+}
+
+/* Back to top button */
+.foot-panel1 {
+    background-color: #37475a;
+    color: white;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.85rem;
+}
+
+.foot-panel2 {
+    background-color: #222f3d;
+    color: white;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+ul {
+    margin-top: 20px;
+}
+
+.foot-panel2 li {
+    list-style: none;
+}
+
+.foot-panel2 ul a {
+    display: block;
+    font-size: 0.85rem;
+    margin-top: 10px;
+    color: #dddddd;
+}
+
+.foot-panel3 {
+    background-color: #222f3d;
+    color: white;
+    border-top: 0.5px solid white;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Footer logo section */
+.logo {
+    background-image: url(amazon_logo.png);
+    background-size: cover;
+    height: 50px;
+    width: 100px;
+}
+
+/* Language & country selectors */
+.footer-selectors {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    padding: 20px;
+    background: #232f3e;
+}
+
+.selector-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 14px;
+    border: 1px solid #848688;
+    border-radius: 4px;
+    background: #232f3e;
+    color: #fff;
+}
+
+.selector-box select {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.selector-box option {
+    color: black;
+}
+
+.selector-box img {
+    width: 20px;
+    height: 14px;
+    object-fit: cover;
+}
+
+.icon {
+    font-size: 16px;
+}
+
+/* Bottom legal information */
+.amazon-footer-bottom {
+    background-color: #131a22;
+    padding: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer-column {
+    width: 150px;
+    margin: 10px 20px;
+    vertical-align: top;
+}
+
+.footer-column a {
+    text-decoration: none;
+    color: #999;
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.footer-column a strong {
+    color: #ddd;
+    display: block;
+    margin-bottom: 2px;
+}
+
+.footer-column a:hover {
+    text-decoration: underline;
+}
+
+.foot-panel4 {
+    background-color: #0f1111;
+    color: white;
+    height: 80px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+    font-size: 0.7rem;
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+.pages ul a {
+    margin: 10px;
+}
+
+/* =====================================================
+   MOBILE LAYOUT ADJUSTMENTS
+   Screens below 660px
+===================================================== */
+
+@media (max-width: 660px) {
+    body {
+    }
+
+    /* Disable hover borders for touch devices */
+    .border:hover {
+        border: 1.5px solid transparent;
+    }
+
+    /* Mobile navbar grid layout */
+    .navbar {
+        background-color: #232f3f;
+    }
+
+    .nav-search {
+        padding-top: 20px;
+        position: relative;
+        background: #fff;
+        border-radius: 4px;
+        overflow: hidden;
+        grid-column: 1 / -1;
+        grid-row: 2;
+        width: 100%;
+        height: 45px;
+    }
+
+    .hide {
+        display: none;
+    }
+
+    .panel-deals p {
+        font-weight: 400;
+        font-size: 0.85rem;
+    }
+
+    /* Horizontal card scrolling for mobile */
+    .shop-section {
+        display: flex;
+        flex-wrap: column;
+        gap: 16px;
+        padding: 20px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .shop-section::-webkit-scrollbar {
+        display: none;
+    }
+
+    .shop-section::-webkit-scrollbar {
+        display: none;
+    }
+
+    .card-row {
+        display: flex;
+        gap: 12px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .card-row::-webkit-scrollbar {
+        display: none;
+    }
+
+    .box {
+        flex: 0 0 85%;
+        width: 260px;
+        background: white;
+        border-radius: 12px;
+        scroll-snap-align: start;
+        transition: transform 0.3s ease;
+    }
+
+    .box:hover {
+        transform: scale(1.05);
+    }
+
+    .box-img {
+        height: 300px;
+        background-size: cover;
+        background-position: center;
+        border-radius: 8px;
+    }
+
+    .navbar {
+        display: grid;
+        grid-template-columns: auto 1fr auto auto;
+        grid-template-rows: auto auto auto;
+        gap: 10px;
+        padding: 10px;
+        height: auto;
+        background: #232f3e;
+    }
+
+    .panel-all {
+        grid-column: 1;
+        grid-row: 1;
+        font-size: 24px;
+    }
+
+    .nav-logo {
+        grid-column: 2;
+        grid-row: 1;
+        justify-self: start;
+    }
+
+    .logo {
+        width: 95px;
+        height: 40px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin-left: 20px;
+    }
+
+    .nav-signin {
+        display: block;
+        grid-column: 3;
+        grid-row: 1;
+    }
+
+    .nav-signin a {
+        font-size: 18px;
+    }
+
+    .nav-cart {
+        grid-column: 4;
+        grid-row: 1;
+    }
+
+    .nav-cart i {
+        font-size: 24px;
+    }
+
+    .search-select {
+        position: absolute;
+        height: 100%;
+        padding: 0 6px;
+        left: 0;
+        top: 0;
+        width: 60px;
+        border: none;
+        border: none;
+        background: #f3f3f3;
+        font-size: 13px;
+        flex-shrink: 0;
+        outline: none;
+    }
+
+    .nav-address {
+        grid-column: 1 / -1;
+        grid-row: 4;
+        max-width: 150%;
+        height: 45px;
+        padding: 12px 12px;
+
+        background: #37475a;
+
+        margin: 0 -10px;
+    }
+
+    .nav-address a {
+        display: flex;
+        align-items: center;
+        margin-right: 225px;
+        font-weight: 700;
+        font-size: 1rem;
+    }
+
+    .panel {
+        grid-column: 1 / -1;
+        grid-row: 3;
+        font-weight: 700;
+        font-size: 1rem;
+        height: 0px;
+    }
+
+    .panel i {
+        padding: 10px 100px 315px 10px;
+        font-size: 25px;
+        font-weight: 700;
+    }
+
+    .signin {
+        display: block;
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+
+    .nav-search {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 42px;
+        background: #ffffff;
+        border-radius: 4px;
+        overflow: hidden;
+    }
+
+    .search-input {
+        height: 100%;
+        flex: 1;
+        min-width: 0;
+        border: none;
+        padding: 8px;
+        font-size: 18px;
+        font-weight: 400;
+        outline: none;
+        margin-left: 70px;
+        margin-bottom: 15px;
+    }
+
+    .search-icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+        background: #febd69;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 42px;
+        flex-shrink: 0;
+    }
+    .nav-first {
+        display: flex;
+        font-size: 1rem;
+        font-weight: 600;
+    }
+
+    /* Footer adjustments for small screens */
+    .foot-panel2 {
+        height: 350px;
+        gap: 20px;
+        padding: 30px 10px;
+        height: auto;
+        align-items: flex-start;
+        display: flex;
+        justify-content: space-evenly;
+        background-color: #222f3d;
+        color: white;
+    }
+
+    .foot-panel2 ul {
+        margin: 0;
+        padding: 0;
+    }
+
+    .foot-panel2 li {
+        list-style: none;
+        margin-bottom: 10px;
+    }
+
+    .footer-title {
+        font-weight: 700;
+        margin-bottom: 15px;
+    }
+
+    .foot-panel2 ul p {
+        font-size: 16px;
+        font-weight: 500;
+
+        margin: 1px;
+        padding: 0px;
+    }
+
+    .foot-panel2 ul a {
+        display: flex;
+
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    .foot-panel2 ul a p {
+        margin: 1px;
+        padding: 0px;
+    }
+
+    .foot-panel3 {
+        background-color: #0f1111;
+        height: 60px;
+    }
+
+    .foot-panel3 .footer-selectors {
+        background-color: #0f1111;
+        height: 60px;
+    }
+
+    .foot-panel4 {
+        height: 200px;
+        font-size: 0.85rem;
+        font-weight: 500;
+        justify-content: center;
+        align-items: center;
+        padding-right: 25px;
+    }
+}
