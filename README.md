@@ -1,4 +1,4 @@
-🛒 Amazon Clone – Responsive E-commerce UI
+##🛒 Amazon Clone – Responsive E-commerce UI
 
 A fully responsive Amazon homepage clone built using HTML5 and CSS3, designed to replicate the layout, structure, and user experience of a modern e-commerce platform.
 
@@ -6,7 +6,7 @@ This project focuses on clean UI design, responsive layouts, and real-world fron
 
 ---
 
-🚀 Live Project Overview
+##🚀 Live Project Overview
 
 This clone recreates key visual components of the Amazon landing page including:
 
@@ -21,30 +21,29 @@ The project emphasizes layout accuracy, CSS organization, and responsive behavio
 
 ---
 
-✨ Key Features
+## ✨ Key Features
 
-✅ Fully responsive design (Desktop + Mobile)
-✅ Sidebar navigation without JavaScript
-✅ Modern product card layout
-✅ Structured and readable CSS architecture
-✅ Mobile horizontal product scrolling
-✅ Hover interactions and UI polish
-✅ Organized footer similar to production websites
-
----
-
-🧰 Tech Stack
-
-Technology| Purpose
-HTML5| Page structure & semantic layout
-CSS3| Styling & responsive design
-Flexbox & Grid Concepts| Layout alignment
-Media Queries| Mobile responsiveness
-Font Awesome| Icons & UI elements
+- ✅ Fully responsive design (Desktop + Mobile)
+- ✅ Sidebar navigation without JavaScript
+- ✅ Modern product card layout
+- ✅ Structured and readable CSS architecture
+- ✅ Mobile horizontal product scrolling
+- ✅ Hover interactions and UI polish
+- ✅ Organized footer similar to production websites
 
 ---
 
-📱 Responsive Design
+## 🧰 Tech Stack
+
+- **HTML5** — Page structure & semantic layout  
+- **CSS3** — Styling and responsive design  
+- **Flexbox & Grid** — Layout alignment  
+- **Media Queries** — Mobile responsiveness  
+- **Font Awesome** — Icons & UI elements
+  
+---
+
+##📱 Responsive Design
 
 The layout adapts smoothly across different screen sizes:
 
@@ -57,8 +56,9 @@ Media queries are implemented to maintain usability and visual balance on smalle
 
 ---
 
-📂 Project Structure
+## 📂 Project Structure
 
+```
 amazon-clone/
 │
 ├── index.html
@@ -66,13 +66,14 @@ amazon-clone/
 ├── images/
 │   ├── amazon_logo.png
 │   ├── hero_image.jpg
-│   ├── box_images...
+│   ├── box1_image.jpg
+│   ├── box2_image.jpg
+│   └── ...
 │
 └── README.md
+```
 
----
-
-🎯 Learning Objectives
+##🎯 Learning Objectives
 
 This project demonstrates practical understanding of:
 
@@ -84,7 +85,7 @@ This project demonstrates practical understanding of:
 
 ---
 
-🧠 Implementation Highlights
+##🧠 Implementation Highlights
 
 - Sidebar menu implemented using CSS checkbox toggle technique
 - Reusable product card components
@@ -93,7 +94,7 @@ This project demonstrates practical understanding of:
 
 ---
 
-🔧 Future Improvements
+##🔧 Future Improvements
 
 - Add JavaScript interactivity
 - Product search functionality
@@ -103,21 +104,21 @@ This project demonstrates practical understanding of:
 
 ---
 
-⚠️ Disclaimer
+##⚠️ Disclaimer
 
 This project is created for educational and portfolio purposes only.
 All trademarks, branding, and assets belong to their respective owners.
 
 ---
 
-👨‍💻 Author
+##👨‍💻 Author
 
 Akash Gill
 Frontend Developer (Aspiring)
 
 ---
 
-⭐ Resume Value
+##⭐ Resume Value
 
 This project showcases:
 
@@ -128,4 +129,4 @@ This project showcases:
 
 ---
 
-💡 Built to practice real-world frontend development and demonstrate practical UI engineering skills.
+##💡 Built to practice real-world frontend development and demonstrate practical UI engineering skills.
